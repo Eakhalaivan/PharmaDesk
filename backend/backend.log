@@ -1,0 +1,100 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.4)
+
+2026-04-15T09:39:51.054+05:30  INFO 17942 --- [           main] PharmacyApplication                      : Starting PharmacyApplication using Java 24 with PID 17942 (/Users/eakhalaivan/pharmacy/backend/target/pharmacy-backend-0.0.1-SNAPSHOT.jar started by eakhalaivan in /Users/eakhalaivan/pharmacy/backend)
+2026-04-15T09:39:51.055+05:30  INFO 17942 --- [           main] PharmacyApplication                      : No active profile set, falling back to 1 default profile: "default"
+2026-04-15T09:39:51.104+05:30  WARN 17942 --- [           main] ionWarningsApplicationContextInitializer : 
+
+** WARNING ** : Your ApplicationContext is unlikely to start due to a @ComponentScan of the default package.
+
+
+2026-04-15T09:39:51.615+05:30  WARN 17942 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: URL [jar:nested:/Users/eakhalaivan/pharmacy/backend/target/pharmacy-backend-0.0.1-SNAPSHOT.jar/!BOOT-INF/lib/spring-boot-autoconfigure-3.4.4.jar!/org/springframework/boot/autoconfigure/r2dbc/ConnectionFactoryConfigurations$PoolConfiguration.class]
+2026-04-15T09:39:51.619+05:30  INFO 17942 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-04-15T09:39:51.627+05:30 ERROR 17942 --- [           main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: URL [jar:nested:/Users/eakhalaivan/pharmacy/backend/target/pharmacy-backend-0.0.1-SNAPSHOT.jar/!BOOT-INF/lib/spring-boot-autoconfigure-3.4.4.jar!/org/springframework/boot/autoconfigure/r2dbc/ConnectionFactoryConfigurations$PoolConfiguration.class]
+	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:510) ~[spring-context-6.2.5.jar!/:6.2.5]
+	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:351) ~[spring-context-6.2.5.jar!/:6.2.5]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:277) ~[spring-context-6.2.5.jar!/:6.2.5]
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128) ~[spring-context-6.2.5.jar!/:6.2.5]
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:345) ~[spring-context-6.2.5.jar!/:6.2.5]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:280) ~[spring-context-6.2.5.jar!/:6.2.5]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:203) ~[spring-context-6.2.5.jar!/:6.2.5]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:172) ~[spring-context-6.2.5.jar!/:6.2.5]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:418) ~[spring-context-6.2.5.jar!/:6.2.5]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.2.5.jar!/:6.2.5]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.2.5.jar!/:6.2.5]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.2.5.jar!/:6.2.5]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791) ~[spring-context-6.2.5.jar!/:6.2.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609) ~[spring-context-6.2.5.jar!/:6.2.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.4.jar!/:3.4.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.4.jar!/:3.4.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.4.jar!/:3.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.4.jar!/:3.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.4.jar!/:3.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.4.jar!/:3.4.4]
+	at PharmacyApplication.main(PharmacyApplication.java:10) ~[!/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102) ~[pharmacy-backend-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[pharmacy-backend-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[pharmacy-backend-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+Caused by: java.lang.IllegalStateException: Could not evaluate condition on org.springframework.boot.autoconfigure.r2dbc.ConnectionFactoryConfigurations$PoolConfiguration due to io/r2dbc/spi/ValidationDepth not found. Make sure your own configuration does not rely on that class. This can also happen if you are @ComponentScanning a springframework package (e.g. if you put a @ComponentScan in the default package by mistake)
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:54) ~[spring-boot-autoconfigure-3.4.4.jar!/:3.4.4]
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:99) ~[spring-context-6.2.5.jar!/:6.2.5]
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:88) ~[spring-context-6.2.5.jar!/:6.2.5]
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:71) ~[spring-context-6.2.5.jar!/:6.2.5]
+	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isConditionMatch(ClassPathScanningCandidateComponentProvider.java:564) ~[spring-context-6.2.5.jar!/:6.2.5]
+	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isCandidateComponent(ClassPathScanningCandidateComponentProvider.java:547) ~[spring-context-6.2.5.jar!/:6.2.5]
+	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:471) ~[spring-context-6.2.5.jar!/:6.2.5]
+	... 25 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: io/r2dbc/spi/ValidationDepth
+	at java.base/java.lang.Class.getDeclaredFields0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:2930) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredField(Class.java:2382) ~[na:na]
+	at org.springframework.boot.context.properties.bind.DefaultBindConstructorProvider$Constructors.isInnerClass(DefaultBindConstructorProvider.java:144) ~[spring-boot-3.4.4.jar!/:3.4.4]
+	at org.springframework.boot.context.properties.bind.DefaultBindConstructorProvider$Constructors.getCandidateConstructors(DefaultBindConstructorProvider.java:134) ~[spring-boot-3.4.4.jar!/:3.4.4]
+	at org.springframework.boot.context.properties.bind.DefaultBindConstructorProvider$Constructors.getConstructors(DefaultBindConstructorProvider.java:103) ~[spring-boot-3.4.4.jar!/:3.4.4]
+	at org.springframework.boot.context.properties.bind.DefaultBindConstructorProvider.getBindConstructor(DefaultBindConstructorProvider.java:42) ~[spring-boot-3.4.4.jar!/:3.4.4]
+	at org.springframework.boot.context.properties.bind.ValueObjectBinder$ValueObject.get(ValueObjectBinder.java:213) ~[spring-boot-3.4.4.jar!/:3.4.4]
+	at org.springframework.boot.context.properties.bind.ValueObjectBinder.bind(ValueObjectBinder.java:76) ~[spring-boot-3.4.4.jar!/:3.4.4]
+	at org.springframework.boot.context.properties.bind.Binder.lambda$bindDataObject$6(Binder.java:480) ~[spring-boot-3.4.4.jar!/:3.4.4]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215) ~[na:na]
+	at java.base/java.util.AbstractList$RandomAccessSpliterator.tryAdvance(AbstractList.java:708) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:147) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:588) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:574) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560) ~[na:na]
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:687) ~[na:na]
+	at org.springframework.boot.context.properties.bind.Binder.fromDataObjectBinders(Binder.java:488) ~[spring-boot-3.4.4.jar!/:3.4.4]
+	at org.springframework.boot.context.properties.bind.Binder.lambda$bindDataObject$7(Binder.java:479) ~[spring-boot-3.4.4.jar!/:3.4.4]
+	at org.springframework.boot.context.properties.bind.Binder$Context.withIncreasedDepth(Binder.java:597) ~[spring-boot-3.4.4.jar!/:3.4.4]
+	at org.springframework.boot.context.properties.bind.Binder$Context.withDataObject(Binder.java:583) ~[spring-boot-3.4.4.jar!/:3.4.4]
+	at org.springframework.boot.context.properties.bind.Binder.bindDataObject(Binder.java:479) ~[spring-boot-3.4.4.jar!/:3.4.4]
+	at org.springframework.boot.context.properties.bind.Binder.bindObject(Binder.java:418) ~[spring-boot-3.4.4.jar!/:3.4.4]
+	at org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:350) ~[spring-boot-3.4.4.jar!/:3.4.4]
+	at org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:339) ~[spring-boot-3.4.4.jar!/:3.4.4]
+	at org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:269) ~[spring-boot-3.4.4.jar!/:3.4.4]
+	at org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:230) ~[spring-boot-3.4.4.jar!/:3.4.4]
+	at org.springframework.boot.autoconfigure.r2dbc.ConnectionFactoryConfigurations$PooledConnectionFactoryCondition.getMatchOutcome(ConnectionFactoryConfigurations.java:155) ~[spring-boot-autoconfigure-3.4.4.jar!/:3.4.4]
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47) ~[spring-boot-autoconfigure-3.4.4.jar!/:3.4.4]
+	... 31 common frames omitted
+Caused by: java.lang.ClassNotFoundException: io.r2dbc.spi.ValidationDepth
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:349) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:557) ~[na:na]
+	at org.springframework.boot.loader.net.protocol.jar.JarUrlClassLoader.loadClass(JarUrlClassLoader.java:107) ~[pharmacy-backend-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.launch.LaunchedClassLoader.loadClass(LaunchedClassLoader.java:91) ~[pharmacy-backend-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	... 62 common frames omitted
+

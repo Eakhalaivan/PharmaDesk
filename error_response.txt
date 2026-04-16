@@ -1,0 +1,1 @@
+{"status":500,"message":"An unexpected error occurred: Unable to find com.pharmacy.model.Medicine with id 2","timestamp":"2026-04-15T16:42:51.435125","errors":null}
