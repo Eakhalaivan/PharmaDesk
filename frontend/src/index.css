@@ -1,0 +1,435 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-primary: oklch(0.627 0.194 149.214); /* Emerald-500 */
+  --color-secondary: oklch(0.208 0.042 265.755); /* Slate-900 */
+  --color-accent: oklch(0.546 0.245 262.881); /* Indigo-600 */
+}
+
+@layer base {
+  :root {
+    --brand-emerald: 149 71% 52%;
+    --brand-blue: 217 91% 60%;
+    --bg-dark: 222 47% 11%;
+    --bg-dark-alt: 229 37% 7%;
+  }
+
+  body {
+    @apply bg-slate-950 text-slate-200 selection:bg-emerald-500/30 selection:text-emerald-400;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-slate-900/50 backdrop-blur-xl border border-white/5;
+  }
+  
+  .glass-card {
+    @apply bg-gradient-to-br from-slate-900/80 to-slate-950/80 backdrop-blur-2xl border border-white/5 shadow-2xl;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px oklch(var(--color-primary) / 0.5);
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.animate-shake {
+  animation: shake 0.2s ease-in-out 0s 2;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-800 rounded-full hover:bg-slate-700 transition-colors;
+}
+
+/* Universe of UI Card Styles */
+.ui-card {
+  width: 100%;
+  border-radius: 20px;
+  background: #1b233d;
+  padding: 5px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 7px 20px 0px;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+}
+
+.ui-card:hover {
+  transform: scale(1.02);
+}
+
+.ui-card .top-section {
+  height: 200px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.ui-card .top-section .card-border-tab {
+  border-bottom-right-radius: 10px;
+  height: 30px;
+  width: 130px;
+  background: #1b233d;
+  position: relative;
+  transform: skew(-40deg);
+  box-shadow: -10px -10px 0 0 #1b233d;
+  margin-left: -20px;
+}
+
+.ui-card .top-section .card-border-tab::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 0;
+  right: -15px;
+  background: rgba(255, 255, 255, 0);
+  border-top-left-radius: 10px;
+  box-shadow: -5px -5px 0 2px #1b233d;
+}
+
+.ui-card .top-section::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background: rgba(255, 255, 255, 0);
+  height: 15px;
+  width: 15px;
+  border-top-left-radius: 15px;
+  box-shadow: -5px -5px 0 2px #1b233d;
+  z-index: 1; /* Above image overlay */
+}
+
+.ui-card .top-section .card-icons {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.ui-card .top-section .card-icons .logo {
+  height: 100%;
+  padding: 7px 0 7px 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ui-card .top-section .card-icons .top-right-actions {
+  height: 100%;
+  padding: 5px 15px;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.ui-card .bottom-section {
+  margin-top: 15px;
+  padding: 10px 5px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ui-card .bottom-section .title {
+  display: block;
+  font-size: 18px;
+  font-weight: bolder;
+  color: white;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.ui-card .bottom-section .subtitle {
+  display: block;
+  text-align: center;
+  color: rgba(170, 222, 243, 0.5);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 4px;
+}
+
+.ui-card .bottom-section .stats-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.ui-card .bottom-section .stats-row .item {
+  flex: 33.3%;
+  text-align: center;
+  padding: 5px;
+  color: rgba(170, 222, 243, 0.721);
+}
+
+.ui-card .bottom-section .stats-row .item .big-text {
+  font-size: 16px;
+  display: block;
+  font-weight: bold;
+  color: white;
+}
+
+.ui-card .bottom-section .stats-row .item .regular-text {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ui-card .bottom-section .stats-row .item:nth-child(2) {
+  border-left: 1px solid rgba(255, 255, 255, 0.126);
+  border-right: 1px solid rgba(255, 255, 255, 0.126);
+}
+
+/* ── Book Flip Card ─────────────────────────────────── */
+.book-card {
+  position: relative;
+  border-radius: 10px;
+  width: 100%;
+  aspect-ratio: 3/4;
+  background-color: #0f172a;
+  box-shadow: 2px 2px 20px #000;
+  transform: preserve-3d;
+  perspective: 2000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-card-cover {
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  transform-origin: 0;
+  box-shadow: 2px 2px 12px #000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.book-card:hover .book-card-cover {
+  transition: all 0.5s ease;
+  transform: rotatey(-80deg);
+}
+
+.book-card-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 20px 20px 30px;
+  gap: 12px;
+  color: #fff;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.book-card-inner .book-title {
+  font-size: 15px;
+  font-weight: 900;
+  color: #fff;
+  text-align: center;
+  line-height: 1.35;
+}
+
+.book-card-inner .book-mfr {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(170,222,243,0.5);
+  text-align: center;
+}
+
+.book-card-inner .book-stats {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 16px;
+  margin-top: 4px;
+}
+
+.book-card-inner .book-stat {
+  flex: 1;
+  text-align: center;
+}
+
+.book-card-inner .book-stat .bstat-value {
+  display: block;
+  font-size: 17px;
+  font-weight: 900;
+  color: #fff;
+}
+
+.book-card-inner .book-stat .bstat-label {
+  display: block;
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: rgba(170,222,243,0.5);
+  margin-top: 2px;
+}
+
+.book-card-inner .book-stat:nth-child(2) {
+  border-left: 1px solid rgba(255,255,255,0.1);
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.book-card-inner .book-actions {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.book-card-inner .book-btn {
+  flex: 1;
+  padding: 9px 4px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-align: center;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.book-card-inner .book-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.book-card-inner .book-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* Base Styles */
+body {
+  background-image: url('/bg-medical.png');
+  background-color: #f8fafc;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #18181b;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
+
+.glass-panel {
+  @apply bg-white/60 backdrop-blur-xl border border-white/40 shadow-2xl;
+}
+
+.animated-card {
+  background: #07182E;
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-card::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%; 
+  aspect-ratio: 1;
+  background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+  animation: rotBGimg 3s linear infinite;
+  z-index: 0;
+}
+
+@keyframes rotBGimg {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+
+.animated-card::after {
+  content: '';
+  position: absolute;
+  background: #07182E;
+  inset: 4px;
+  border-radius: 28px; /* Assuming parent has 32px border-radius */
+  z-index: 1;
+}
+
+.animated-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* Glassmorphism & Soft UI Elements */
+.pro-card {
+  @apply bg-white/70 backdrop-blur-md border border-white/40 rounded-[32px] shadow-sm hover:shadow-xl hover:bg-white/90 transition-all duration-500;
+}
+
+.pro-sidebar-item {
+  @apply flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-gray-500 hover:text-primary hover:bg-gray-50 transition-all cursor-pointer;
+}
+
+.pro-sidebar-item.active {
+  @apply text-primary bg-gray-50 border-l-4 border-primary rounded-l-none;
+}
+
+.status-card-emerald {
+  @apply bg-emerald-50/50 border border-emerald-100/50 text-emerald-700;
+}
+
+.status-card-amber {
+  @apply bg-amber-50/50 border border-amber-100/50 text-amber-700;
+}
+
+.status-card-rose {
+  @apply bg-rose-50/50 border border-rose-100/50 text-rose-700;
+}
+
+.status-card-blue {
+  @apply bg-blue-50/50 border border-blue-100/50 text-blue-700;
+}
